@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backend.file.mapper.log.ModelsHot2coldResultLogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.backend.file.pojo.ModelsHot2coldResultLog">
+        <id column="id" property="id" />
+        <result column="cloudModelServerID" property="cloudModelServerID" />
+        <result column="cloudModelServerName" property="cloudModelServerName" />
+        <result column="cloudModelServerDomain" property="cloudModelServerDomain" />
+        <result column="cloudModelServerVersion" property="cloudModelServerVersion" />
+        <result column="startTime" property="startTime" />
+        <result column="endTime" property="endTime" />
+        <result column="milliseconds2Migrate" property="milliseconds2Migrate" />
+        <result column="modelTotalAmount2Migrate" property="modelTotalAmount2Migrate" />
+        <result column="modelArchiveFileTotalBytes2Migrate" property="modelArchiveFileTotalBytes2Migrate" />
+        <result column="modelFailureAmount2Migrate" property="modelFailureAmount2Migrate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cloudModelServerID, cloudModelServerName, cloudModelServerDomain, cloudModelServerVersion, startTime, endTime, milliseconds2Migrate, modelTotalAmount2Migrate, modelArchiveFileTotalBytes2Migrate, modelFailureAmount2Migrate
+    </sql>
+
+</mapper>

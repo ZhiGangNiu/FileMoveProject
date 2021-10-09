@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backend.file.mapper.project.CentermodelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.backend.file.pojo.Centermodel">
+        <id column="modelId" property="modelId"/>
+        <result column="modelName" property="modelName"/>
+        <result column="modelId4Revit" property="modelId4Revit"/>
+        <result column="addType" property="addType"/>
+        <result column="modelFileName" property="modelFileName"/>
+        <result column="sourceModelName" property="sourceModelName"/>
+        <result column="modelRelatePath" property="modelRelatePath"/>
+        <result column="teamId" property="teamId"/>
+        <result column="projectId" property="projectId"/>
+        <result column="modelServerDomain" property="modelServerDomain"/>
+        <result column="hasCreated4Revit" property="hasCreated4Revit"/>
+        <result column="addUserId" property="addUserId"/>
+        <result column="addUserName" property="addUserName"/>
+        <result column="addTime" property="addTime"/>
+        <result column="isDeleted" property="isDeleted"/>
+        <result column="encryptKey" property="encryptKey"/>
+        <result column="modelServerHardwareCode" property="modelServerHardwareCode"/>
+        <result column="modelServerType" property="modelServerType"/>
+        <result column="currentSize" property="currentSize"/>
+        <result column="currentSizeUpdateTime" property="currentSizeUpdateTime"/>
+        <result column="modelType" property="modelType"/>
+        <result column="bucket" property="bucket"/>
+        <result column="storageServiceType" property="storageServiceType"/>
+        <result column="modelLastVersion" property="modelLastVersion"/>
+        <result column="dutyUserId" property="dutyUserId"/>
+        <result column="dutyLastTime" property="dutyLastTime"/>
+        <result column="groupId" property="groupId"/>
+        <result column="modelDescription" property="modelDescription"/>
+        <result column="finishTime" property="finishTime"/>
+        <result column="finishUserId" property="finishUserId"/>
+        <result column="key4Thumbnail" property="key4Thumbnail"/>
+        <result column="bucketThumbnail" property="bucketThumbnail"/>
+        <result column="storageServiceThumbnail" property="storageServiceThumbnail"/>
+        <result column="lastModelUpdateUserId" property="lastModelUpdateUserId"/>
+        <result column="lastModelUpdateUserName" property="lastModelUpdateUserName"/>
+        <result column="lastModelUpdateUserHardwareCode" property="lastModelUpdateUserHardwareCode"/>
+        <result column="createLastSnapshotDone" property="createLastSnapshotDone"/>
+        <result column="deleteTime" property="deleteTime"/>
+        <result column="lastUpdateTime" property="lastUpdateTime"/>
+        <result column="addRecycleBin" property="addRecycleBin"/>
+        <result column="isRecycleBinUserId" property="isRecycleBinUserId"/>
+        <result column="isRecycleBinUserName" property="isRecycleBinUserName"/>
+        <result column="addRecycleBinTime" property="addRecycleBinTime"/>
+        <result column="isDeletedUserId" property="isDeletedUserId"/>
+        <result column="recoverUserId" property="recoverUserId"/>
+        <result column="recoverDatetime" property="recoverDatetime"/>
+        <result column="hotColdState" property="hotColdState"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        modelId, modelName, modelId4Revit, addType, modelFileName, sourceModelName, modelRelatePath, teamId, projectId, modelServerDomain, hasCreated4Revit, addUserId, addUserName, addTime, isDeleted, encryptKey, modelServerHardwareCode, modelServerType, currentSize, currentSizeUpdateTime, modelType, bucket, storageServiceType, modelLastVersion, dutyUserId, dutyLastTime, groupId, modelDescription, finishTime, finishUserId, key4Thumbnail, bucketThumbnail, storageServiceThumbnail, lastModelUpdateUserId, lastModelUpdateUserName, lastModelUpdateUserHardwareCode, createLastSnapshotDone, deleteTime, lastUpdateTime, addRecycleBin, isRecycleBinUserId, isRecycleBinUserName, addRecycleBinTime, isDeletedUserId, recoverUserId, recoverDatetime, hotColdState
+    </sql>
+    <select id="findCenterModelByModelRelatePaths" resultType="com.backend.file.pojo.Centermodel">
+        SELECT <include refid="Base_Column_List"/> FROM `centermodel` WHERE modelRelatePath IN
+        (
+            <foreach collection="modelRelatePaths" item="item" separator=",">
+                #{item}
+            </foreach>
+        )
+    </select>
+
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.backend.file.mapper.project.CentralmodelcolddatastoreinfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.backend.file.pojo.Centralmodelcolddatastoreinfo">
+        <id column="id" property="id" />
+        <result column="modelId" property="modelId" />
+        <result column="teamId" property="teamId" />
+        <result column="projectId" property="projectId" />
+        <result column="bucket" property="bucket" />
+        <result column="storageServiceType" property="storageServiceType" />
+        <result column="modelColdFileKey" property="modelColdFileKey" />
+        <result column="fingerprint4File" property="fingerprint4File" />
+        <result column="size" property="size" />
+        <result column="modelServerDomain" property="modelServerDomain" />
+        <result column="modelLastVersion" property="modelLastVersion" />
+        <result column="revitVersion" property="revitVersion" />
+        <result column="addTime" property="addTime" />
+        <result column="lastUpdateTime" property="lastUpdateTime" />
+        <result column="isDeleted" property="isDeleted" />
+        <result column="deleteTime" property="deleteTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, modelId, teamId, projectId, bucket, storageServiceType, modelColdFileKey, fingerprint4File, size, modelServerDomain, modelLastVersion, revitVersion, addTime, lastUpdateTime, isDeleted, deleteTime
+    </sql>
+
+</mapper>
